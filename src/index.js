@@ -9,8 +9,9 @@ import createExpires from './expires';
 import Pipeline from './pipeline';
 
 class RedisMock extends EventEmitter {
-  constructor({ data = {} } = {}) {
+  constructor({ data = {}, bus = new EventEmitter() } = {}) {
     super();
+    this.bus = bus;
     this.channels = {};
     this.batch = undefined;
 
