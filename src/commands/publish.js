@@ -1,3 +1,3 @@
-export function publish() {
-  return 0;
+export function publish(channel, message) {
+  this.bus.emit(channel, message);
 }
